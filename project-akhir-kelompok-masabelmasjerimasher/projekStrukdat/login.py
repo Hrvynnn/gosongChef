@@ -1,9 +1,9 @@
 import streamlit as st
 import json
 import base64
-from ultility import wide_page
+#from ultility import wide_page
 
-wide_page()
+#wide_page()
 
 
 if "logged_in" not in st.session_state:
@@ -168,4 +168,5 @@ elif st.session_state.page_mode == "signup":
 
     st.markdown("<br>", unsafe_allow_html=True)
     st.text("Already have an account?")
+
     st.button("Log In", on_click=lambda: st.session_state.update(page_mode="login"))
