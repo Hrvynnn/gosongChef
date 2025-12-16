@@ -1,6 +1,7 @@
 import streamlit as st
 import json
 import base64
+import os
 #from ultility import wide_page
 
 #wide_page()
@@ -175,4 +176,5 @@ elif st.session_state.page_mode == "signup":
     st.text("Already have an account?")
 
     st.button("Log In", on_click=lambda: st.session_state.update(page_mode="login"))
+
 
