@@ -65,9 +65,13 @@ def button_color():
 
 
 def navbar():
-    with open("logo.png", "rb") as file:
-        img_base64 = base64.b64encode(file.read()).decode()
+    #with open("logo.png", "rb") as file:
+        #img_base64 = base64.b64encode(file.read()).decode()
+    BASE_DIR = os.path.dirname(__file__)
+    logo_path = os.path.join(BASE_DIR, "logo.png")
 
+    with open(logo_path, "rb") as file:
+        logo_bytes = file.read()
     st.markdown(f"""
     <style>
     .navbar {{
@@ -647,6 +651,7 @@ def show_rekomendasi_harian_sidebar():
             st.info(alasan) 
         st.image(meal["strMealThumb"],caption=meal["strMeal"],width=150)
     
+
 
 
 
