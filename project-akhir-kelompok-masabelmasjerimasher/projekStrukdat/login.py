@@ -17,8 +17,13 @@ def check_user_credentials(username, password, user_data):
         return True
     return False
 
-with open("logo.png", "rb") as file:
-    img_base64 = base64.b64encode(file.read()).decode()
+#with open("logo.png", "rb") as file:
+    #img_base64 = base64.b64encode(file.read()).decode()
+BASE_DIR = os.path.dirname(__file__)
+logo_path = os.path.join(BASE_DIR, "logo.png")
+
+with open(logo_path, "rb") as file:
+    logo_bytes = file.read()
 
 st.markdown("""
         <style>
@@ -170,3 +175,4 @@ elif st.session_state.page_mode == "signup":
     st.text("Already have an account?")
 
     st.button("Log In", on_click=lambda: st.session_state.update(page_mode="login"))
+
